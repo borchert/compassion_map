@@ -168,7 +168,19 @@ jQuery.fn.exists = function (){
               "showAttachments": false,
               "showDeleteButton": false,
               "isEditable": true,
-              "fieldInfos": appGlobals.compassionLayer.fields
+              "fieldInfos": [
+                {
+                  "fieldName": "Signs_of_Compassion",
+                  "label": "Act of Compassion",
+                  "isEditable": true
+                },
+                 {
+                  "fieldName": "Date",
+                  "label": "Date",
+                  "isEditable": true
+                }
+
+              ]
             }
           ];
 
@@ -221,7 +233,7 @@ jQuery.fn.exists = function (){
                 appGlobals.compassionLayer.queryFeatures(query, function (result){
                   if (result.features.length > 0) {
                     var currentFeature = result.features[0];
-                    appGlobals.compassionLayer.selectFeatures(currentFeature);
+
                     var currentFeatureLocation = webMercatorUtils.webMercatorToGeographic(currentFeature.geometry);
                     // ----------------------------------------------------
                     // Convert the feature's location to a real world
