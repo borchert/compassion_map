@@ -60,14 +60,7 @@ jQuery.fn.exists = function (){
           SimpleLineSymbol, SimpleMarkerSymbol, Locator, Query){
 
           parser.parse();
-          // ----------------------------------------------------
-          // This sample requires a proxy page to handle
-          // communications with the ArcGIS Server services. You
-          // will need to replace the url below with the location
-          // of a proxy on your machine. See the
-          // "Using the proxy page" help topic for details on
-          // setting up a proxy page.
-          // ----------------------------------------------------
+       
           esriConfig.defaults.io.proxyUrl = "/sproxy/";
 
           // ----------------------------------------------------
@@ -105,9 +98,6 @@ jQuery.fn.exists = function (){
           // ----------------------------------------------------
           // Formatting functions for infoTemplate
           // ----------------------------------------------------
-          //severityDomainLookup = function (value, key, data){
-            //return compassionFieldDomainCodedValuesDict[value];
-          //};
           requestCompassionDomainLookup = function (value, key, data){
             return compassionFieldDomainCodedValuesDict[value];
           };
@@ -199,11 +189,11 @@ jQuery.fn.exists = function (){
           // Initializes event handler for map and prepares the
           // FeatureTemplate
           // ----------------------------------------------------
-          function addCitizenRequestFeature(item){
+          function addCompassionFeature(item){
 
             $("#ui-collection-prompt").popup("open");
 
-            var citizenRequestFeatureTemplate = getFeatureTemplateFromCodedValueByName(item);
+            var compassionFeatureTemplate = getFeatureTemplateFromCodedValueByName(item);
             var mapClickEventHandler = on(appGlobals.map, "click", function (event){
 
               //only capture one click
@@ -212,7 +202,7 @@ jQuery.fn.exists = function (){
               appGlobals.collectMode = false;
 
         
-              var newAttributes = lang.mixin({}, citizenRequestFeatureTemplate.prototype.attributes);
+              var newAttributes = lang.mixin({}, compassionFeatureTemplate.prototype.attributes);
               newAttributes["Date"] = new Date();
               var newGraphic = new Graphic(event.mapPoint, null, newAttributes);
               // ----------------------------------------------------
@@ -324,7 +314,7 @@ jQuery.fn.exists = function (){
                 });
                 
             }); 
-            addCitizenRequestFeature("Compassion"); 
+            addCompassionFeature("Compassion"); 
             
         };
 
