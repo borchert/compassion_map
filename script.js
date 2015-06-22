@@ -13,7 +13,7 @@ jQuery.fn.exists = function (){
       compassionLayer: null,
       locator: null,
       locatorURL: "//geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer",
-      compassionLayerURL:"http://services.arcgis.com/8df8p0NlLFEShl0r/arcgis/rest/services/CompassionService_Jun19/FeatureServer/0",
+      compassionLayerURL:"http://services.arcgis.com/8df8p0NlLFEShl0r/arcgis/rest/services/CompassionService_Jun22/FeatureServer/0",
       center: [-93.236330, 44.971881]
     };
 
