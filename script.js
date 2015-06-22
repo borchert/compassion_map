@@ -420,7 +420,7 @@ jQuery.fn.exists = function (){
             $("#ui-collection-prompt").on("popupafteropen", function (event, ui){
               setTimeout(function (){
                 $("#ui-collection-prompt").popup("close");
-              }, 5000);
+              }, 3000);
             });
           }
 
